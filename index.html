@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aaditya Mahadevan | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    :root {
+      --bg-light: #fdfdfd;
+      --text-light: #333;
+      --bg-dark: #121212;
+      --text-dark: #f1f1f1;
+      --primary: #0077cc;
+      --primary-hover: #005fa3;
+    }
+
+    [data-theme="dark"] {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+[data-theme="dark"] a {
+  color: #58a6ff;
+}
+
+[data-theme="dark"] .skills li {
+  background: #2c2c2c;
+  color: #eee;
+}
+
+[data-theme="dark"] .button {
+  background: #0077cc;
+  color: white;
+}
+
+[data-theme="dark"] .button:hover {
+  background: #005fa3;
+}
+
+    [data-theme="dark"] header,
+[data-theme="dark"] footer,
+[data-theme="dark"] body,
+[data-theme="dark"] .hero,
+[data-theme="dark"] .section {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] body {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+    header {
+
+      border-bottom: 1px solid #eaeaea;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  transition: background-color 0.3s ease;
+}
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      width: 100%;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .toggle-theme {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .toggle-theme:hover {
+      background: var(--primary-hover);
+    }
+
+    .hero {
+  background: #f0f4f8;
+  padding: 3rem 0;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+}
+
+    .section {
+      padding: 3rem 1rem;
+    }
+
+    .profile {
+  width: 150px;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 8px;
+}
+
+    .project {
+      margin-bottom: 1.5rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      list-style: none;
+      padding: 0;
+    }
+
+    .skills li {
+      background: #e0e7ef;
+      color: #333;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: transform 0.2s;
+    }
+
+    .button:hover {
+      background: var(--primary-hover);
+      transform: scale(1.05);
+    }
+
+    footer {
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 1px solid #eaeaea;
+    }
+
+    .fade-in, .slide-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    .fade-in.appear, .slide-up.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    header.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] header.scrolled {
+  background-color: rgba(30, 30, 30, 0.95);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.header-flex {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    @media(min-width: 768px) {
+      .header-flex {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project p {
+      margin-left: 0.5rem;
+    }
+[data-theme="dark"] header h1 {
+  color: #f1f1f1;
+}</style>
+<style>#particles-js{position:fixed;width:100%;height:100%;z-index:-1;top:0;left:0}</style>
+</head>
+<body>
+  <header>
+  <div class="container header-flex">
+    <h1 class="fade-in" style="transition: color 0.3s ease;">Aaditya Mahadevan</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+      <button class="toggle-theme" onclick="toggleTheme()">🌓</button>
+    </nav>
+  </div>
+</header>
+
+<div id="particles-js"></div>
+  <section id="hero" class="hero">
+    <div class="container slide-up">
+      <h2><span class="typed"></span></h2>
+      <p>Software Engineer | Backend Developer | Cloud Enthusiast</p>
+    </div>
+  </section>
+
+  <section id="about" class="section fade-in">
+    <div class="container">
+      <h2>About Me</h2>
+      <img src="assets/profile.jpg" alt="Profile Photo" class="profile" />
+      <p>I’m a recent MSCS graduate from Stony Brook University, passionate about building scalable systems and intuitive interfaces. I love solving real-world problems through clean and efficient code.</p>
+    </div>
+  </section>
+
+  <section id="projects" class="section slide-up">
+    <div class="container">
+      <h2>Projects</h2>
+      
+      <div class="project">
+        <h3><a href="http://eyecando.org/" target="_blank">EyeCanDo</a></h3>
+        <p>Assistive technology project enabling eye-controlled UI navigation, enhancing accessibility for differently abled users.</p>
+      </div>
+      <div class="project">
+        <h3><a href="https://github.com/AadityaMahadevan/TextSummarizer" target="_blank">Text Summarizer App</a></h3>
+        <p>Developed a Django web app combining extractive (Word2Vec + TF-IDF) and abstractive models (BART, T5) fine-tuned on news datasets. Integrated AssemblyAI for transcription, delivered high ROUGE/BLEU scores.</p>
+      </div>
+      <div class="project">
+        <h3><a href="https://github.com/anina512/Eiga-Movie-Streaming-Service" target="_blank">Eiga Movie Streaming Service</a></h3>
+        <p>Built a Flutter app with Firebase backend enabling real-time media streaming with offline-first caching. Integrated OMDb/TMDb APIs and implemented personalized recommendations using clustering.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section fade-in">
+  <div class="container" style="text-align: center;">
+    <h2>Skills</h2>
+    <ul class="skills" style="justify-content: center;">
+      <li>Python</li><li>Java</li><li>C</li><li>JavaScript</li><li>Swift</li><li>Dart</li>
+      <li>Docker</li><li>Kubernetes</li><li>Firebase</li><li>Django</li><li>Unity</li><li>Git</li><li>MLflow</li>
+      <li>Clickhouse</li><li>PostGIS</li><li>MySQL</li><li>Polars</li><li>PyTorch</li>
+      <li>AssemblyAI</li><li>AWS</li><li>FastAPI</li><li>SQL</li>
+    </ul>
+  </div>
+</section>
+
+<section id="certifications" class="section slide-up">
+  <div class="container" style="text-align: center;">
+    <h2>Certifications</h2>
+    <ul class="skills" style="justify-content: center; list-style: none;">
+      <li><a href="https://www.credly.com/badges/aaf20f02-357c-4d4d-aa85-628966c41c77/linked_in_profile" target="_blank">AWS Certified Developer – Associate</a></li>
+      <li><a href="https://www.educative.io/verify-certificate/Z4JLg2t8WgN2Zpr36SXV9j1l7zyGIV" target="_blank">Grokking Modern System Design Interview</a></li>
+      <li><a href="https://www.coursera.org/account/accomplishments/verify/YEK0G0XP6V2A" target="_blank">Generative AI Engineering and Fine-Tuning Transformers</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="resume" class="section slide-up">
+  <div class="container" style="text-align: center;">
+    <h2>Resume</h2>
+    <a href="assets/resume.pdf" class="button" target="_blank" style="background: linear-gradient(90deg, #0077cc, #00c6ff); box-shadow: 0 4px 15px rgba(0, 118, 255, 0.3);">🚀 Download My Resume</a>
+  </div>
+</section>
+
+  <section id="contact" class="section fade-in">
+  <div class="container" style="text-align: center;">
+    <h2>Contact</h2>
+    <p>
+      <a href="mailto:aadityamahadevan07@gmail.com">Email</a> • 
+      <a href="https://github.com/AadityaMahadevan">GitHub</a> • 
+      <a href="https://www.linkedin.com/in/aaditya-mahadevan/">LinkedIn</a>
+    </p>
+  </div>
+</section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Aaditya Mahadevan. Built with HTML, CSS, and ❤️</p>
+    </div>
+  </footer>
+
+  <script>
+    // Load saved theme on startup
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
+
+    const faders = document.querySelectorAll(".fade-in");
+    const sliders = document.querySelectorAll(".slide-up");
+
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => appearOnScroll.observe(fader));
+    sliders.forEach(slider => appearOnScroll.observe(slider));
+
+    function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute("data-theme");
+  const newTheme = current === "dark" ? "light" : "dark";
+  html.setAttribute("data-theme", newTheme);
+  localStorage.setItem("theme", newTheme);
+
+  const particles = document.getElementById('particles-js');
+  particles.style.display = newTheme === "dark" ? 'none' : 'block';
+}
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    // Typed.js
+    new Typed('.typed', {
+      strings: ["Hi, I'm Aaditya.", "Software Engineer.", "Backend Developer.", "Cloud Enthusiast."],
+      typeSpeed: 60,
+      backSpeed: 30,
+      loop: true
+    });
+
+    // Particles.js
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 45, density: { enable: true, value_area: 800 } },
+        color: { value: '#58a6ff' },
+        shape: { type: "circle" },
+        opacity: { value: 0.5, random: true },
+        size: { value: 4, random: true },
+        line_linked: { enable: true, distance: 150, color: '#58a6ff', opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 3, direction: "none", out_mode: "bounce" }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
+        },
+        modes: {
+          repulse: { distance: 100, duration: 0.4 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  
+</script>
+</body>
+</html>
